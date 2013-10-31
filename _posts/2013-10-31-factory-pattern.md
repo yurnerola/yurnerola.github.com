@@ -133,3 +133,7 @@ public abstract class PizzaStore {
 }
 
 {% endhighlight %}
+
+![enter image description here][1]
+
+  [1]: http://yurnerola.github.io/img/factory%20pattern.png
