@@ -7,12 +7,117 @@ tags: [Design Pattern]
 ---
 {% include JB/setup %}
 
-Factory Pattern
----------------
 
-    Design Patterns 
-		Creational pattern
-		Behavioral pattern
-		Structural pattern
-		Concurrency pattern
-									        
+###Content:
+
+ - Simple Factory
+ - Factory Method
+ - Abstract Factory
+
+###Create an instance of class
+
+Yes.U can user new.And it's so easy that mom need not to worry about i don't know how to do it.But why Factory pattern?
+
+Let’s say you have a pizza shop, and as a cutting-edge pizza store owner in Objectville you might end up writing some code like this:
+
+{% highlight java %}
+public Pizza orderPizza(String type){
+
+	pizza = new Pizza();
+
+	pizza.prepare();
+	pizza.bake();
+	pizza.cut();
+	pizza.box();
+	return pizza;
+}
+
+{% endhighlight %}
+
+But you need more than one type of pizza...
+
+{% highlight java %}
+public Pizza orderPizza(String type){
+
+	if (type.equals("cheese")) {
+		pizza = new CheesePizza();
+	} else if (type.equals("pepperoni")) {
+		pizza = new PepperoniPizza();
+	}
+
+	pizza.prepare();
+	pizza.bake();
+	pizza.cut();
+	pizza.box();
+	return pizza;
+}
+
+{% endhighlight %}
+
+
+But the pressure is on to add more pizza types…
+
+
+{% highlight java %}
+
+public class SimplePizzaFactory {
+
+	public Pizza createPizza(String type) {
+		Pizza pizza = null;
+
+		if (type.equals("cheese")) {
+			pizza = new CheesePizza();
+		} else if (type.equals("pepperoni")) {
+			pizza = new PepperoniPizza();
+		} else if (type.equals("clam")) {
+			pizza = new ClamPizza();
+		} else if (type.equals("veggie")) {
+			pizza = new VeggiePizza();
+		}
+		return pizza;
+	}
+}
+
+public class PizzaStore {
+	SimplePizzaFactory factory;
+ 
+	public PizzaStore(SimplePizzaFactory factory) { 
+		this.factory = factory;
+	}
+ 
+	public Pizza orderPizza(String type) {
+		Pizza pizza;
+ 
+		pizza = factory.createPizza(type);
+ 
+		pizza.prepare();
+		pizza.bake();
+		pizza.cut();
+		pizza.box();
+
+		return pizza;
+	}
+}
+
+{% endhighlight %}
+
+Franchising the pizza store with regional differences
+
+
+But you need more than one type of pizza...
+
+{% highlight java %}
+public abstract class PizzaStore {
+ 
+	abstract Pizza createPizza(String item);
+ 
+	public Pizza orderPizza(String type) {
+		Pizza pizza = createPizza(type);
+	
+		pizza.prepare();
+       	. . . 
+		return pizza;
+	}
+}
+
+{% endhighlight %}
