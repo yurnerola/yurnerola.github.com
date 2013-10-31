@@ -136,4 +136,19 @@ public abstract class PizzaStore {
 
 ![enter image description here][1]
 
+
+###Factory Method Pattern Definition
+
+>The Factory Method Pattern defines an interface for creating an object, but lets subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses.
+
+
+![enter image description here][2]
+
+Abstract Factory
+
+>Provides an interface for creating families of related or dependent objects without specifying their concrete classes.
+
+
+
   [1]: http://yurnerola.github.io/img/factory%20pattern.png
+  [2]: http://yurnerola.github.io/img/abstract%20factory.png
