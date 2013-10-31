@@ -103,10 +103,22 @@ public class PizzaStore {
 
 Franchising the pizza store with regional differences
 
-
-But you need more than one type of pizza...
-
 {% highlight java %}
+public class NYPizzaStore extends PizzaStore {
+
+	Pizza createPizza(String item) {
+		if (item.equals("cheese")) {
+			return new NYStyleCheesePizza();
+		} else if (item.equals("veggie")) {
+			return new NYStyleVeggiePizza();
+		} else if (item.equals("clam")) {
+			return new NYStyleClamPizza();
+		} else if (item.equals("pepperoni")) {
+			return new NYStylePepperoniPizza();
+		} else return null;
+	}
+}
+
 public abstract class PizzaStore {
  
 	abstract Pizza createPizza(String item);

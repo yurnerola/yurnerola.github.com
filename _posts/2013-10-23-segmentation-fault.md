@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "程序崩溃调试"
+title: "Segmentation fault"
 description: ""
-category: ""
+category: "Gdb"
 tags: []
 ---
 {% include JB/setup %}
