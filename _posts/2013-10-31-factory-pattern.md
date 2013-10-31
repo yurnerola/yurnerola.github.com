@@ -144,7 +144,7 @@ public abstract class PizzaStore {
 
 ![enter image description here][2]
 
-Abstract Factory
+###Abstract Factory
 
 >Provides an interface for creating families of related or dependent objects without specifying their concrete classes.
 
