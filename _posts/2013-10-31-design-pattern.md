@@ -2,7 +2,7 @@
 layout: post
 title: "Design Pattern Study"
 description: ""
-category: "Design Pattern"
+category: "设计模式"
 tags: []
 ---
 {% include JB/setup %}
