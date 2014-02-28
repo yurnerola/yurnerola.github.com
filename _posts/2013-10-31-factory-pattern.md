@@ -2,7 +2,7 @@
 layout: post
 title: "Factory Pattern"
 description: ""
-category: "Design Pattern"
+category: "设计模式"
 tags: [Design Pattern]
 ---
 {% include JB/setup %}
